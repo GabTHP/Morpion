@@ -51,44 +51,42 @@ class Board
      @array_cases.map { |item| item.position == case_choose ? item.content = player_symbol  : item }
   end
 
-  def party_win?
+  def party_win
 
 
-        if @A1.content = "X" && @A2.content = "X" && @A2.content = "X" || @A1.content = "O" && @A2.content = "O" && @A2.content = "O"
+        if @A1.content =  @A2.content = @A2.content  || @A1.content = @A2.content =  @A3.content 
         then @game_win = true
-        end 
+         
 
-        if @C1.content = "X" && @C2.content = "X" && @C3.content = "X" || @C1.content = "O" && @C2.content = "O" && @C2.content = "O"
+        elsif @C1.content = "X" && @C2.content = "X" && @C3.content = "X" || @C1.content = "O" && @C2.content = "O" && @C3.content = "O"
         then @game_win = true
-        end
-
-        if @B1.content = "X" && @B2.content = "X" && @B3.content = "X" || @B1.content = "O" && @B2.content = "O" && @B2.content = "O"
-        then @game_win = true
-        end 
-
-        if @A1.content = "X" && @B1.content = "X" && @C1.content = "X" || @A1.content = "O" && @B1.content = "O" && @C2.content = "O"
-        then @game_win = true 
-        end
-
-        if @A2.content = "X" && @B2.content = "X" && @C2.content = "X" || @A2.content = "O" && @B2.content = "O" && @C2.content = "O"
-        then @game_win = true 
-        end
-
-        if @A3.content = "X" && @B3.content = "X" && @C3.content = "X" || @A3.content = "O" && @B3.content = "O" && @C3.content = "O"
-        then @game_win = true
-        end
-
-        if @A1.content = "X" && @B2.content = "X" && @C3.content = "X" || @A1.content = "O" && @B2.content = "O" && @C3.content = "O"
-        then @game_win = true 
-        end
         
-        if @A3.content = "X" && @B2.content = "X" && @C1.content = "X" || @A3.content = "O" && @B2.content = "O" && @C1.content = "O"
+
+        elsif @B1.content = "X" && @B2.content = "X" && @B3.content = "X" || @B1.content = "O" && @B2.content = "O" && @B3.content = "O"
+        then @game_win = true
+         
+
+        elsif @A1.content = "X" && @B1.content = "X" && @C1.content = "X" || @A1.content = "O" && @B1.content = "O" && @C1.content = "O"
+        then @game_win = true 
+        
+
+        elsif @A2.content = "X" && @B2.content = "X" && @C2.content = "X" || @A2.content = "O" && @B2.content = "O" && @C2.content = "O"
+        then @game_win = true 
+        
+
+        elsif @A3.content == "X" && @B3.content == "X" && @C3.content == "X" || @A3.content == "O" && @B3.content == "O" && @C3.content == "O"
+        then @game_win = true
+        
+
+        elsif @A1.content = "X" && @B2.content = "X" && @C3.content = "X" || @A1.content = "O" && @B2.content = "O" && @C3.content = "O"
+        then @game_win = true 
+        
+        
+        elsif @A3.content = "X" && @B2.content = "X" && @C1.content = "X" || @A3.content = "O" && @B2.content = "O" && @C1.content = "O"
         then @game_win = true
         end
 
-        def game_nul
-          @array_cases.each { |item| item.content == /[:SPACE:]/ ? @game_nil_variable = true : @game_nil_variable = false }
-        end  
+          
     end
 
 end
