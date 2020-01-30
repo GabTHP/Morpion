@@ -86,9 +86,9 @@ class Board
         then @game_win = true
         end
 
-    def game_nul
+        def game_nul
           @array_cases.each { |item| item.content == /[:SPACE:]/ ? @game_nil_variable = true : @game_nil_variable = false }
-    end  
+        end  
     end
 
 end
